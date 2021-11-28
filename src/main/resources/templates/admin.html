@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online banking system</title>
+     <!--    BOOTSTRAP    -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ 
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+    
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <a href="" class="header__title">ADMIN PAGE</a>
+                    <div class="header__burger">
+                        <span></span>
+                    </div>
+                    <nav class="header__menu">
+                        <ul class="header__list">
+                            <li class="header__link"><a th:href="@{/admin}">Home</a></li>
+                            <li class="header__link"><a th:href="@{/admin/addUser}">Add User</a></li>
+                            <li class="header__link"><a th:href="@{/admin/addTransaction}">Add Transaction</a></li>
+                            <li class="header__link"><a th:href="@{/admin/report}">Report</a></li>
+                            <li class="header__link"><a th:href="@{/admin/getall}">Users list</a></li>
+                            <li >
+                                <a class="nav-link2 nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                th:text="${username}">
+                                  Hi, ...(User)
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                  <a class="dropdown-item" href="#">My profile</a>
+                                  <a class="dropdown-item" href="#">Change password</a>
+                                  <a class="dropdown-item" href="#">Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="content">
+            <div class="container">
+                <div class="content__main main">
+                        <div class="main__names"> <br> Kaspibank</div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+        <div class="container">
+            <div class="footer__row">
+                <div class="footer__text"></div>
+            </div>
+        </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

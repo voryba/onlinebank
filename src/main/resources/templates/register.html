@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Sign Up - CodeJava</title>
+
+    <!--    BOOTSTRAP    -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="container text-center">
+    <div>
+        <h1>Signing Up</h1>
+    </div>
+    <form th:action="@{/process_register}" th:object="${user}"
+          method="post" style="max-width: 600px; margin: 0 auto;">
+        <div class="m-3">
+            <!--     First name     -->
+            <div class="form-group row">
+                <label class="col-4 col-form-label">First name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{first_name}" class="form-control" required />
+                </div>
+            </div>
+            <!--     Last name     -->
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Last name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{last_name}" class="form-control" required/>
+                </div>
+            </div>
+            <!--     email     -->
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Email: </label>
+                <div class="col-8">
+                    <input type="email" th:field="*{email}" class="form-control" required/>
+                </div>
+            </div>
+            <!--     Phone number     -->
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Phone number: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{phoneNumber}" class="form-control" required />
+                </div>
+            </div>
+            <!--     Password     -->
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Password: </label>
+                <div class="col-8">
+                    <input type="password" th:field="*{password}" class="form-control" required />
+                </div>
+            </div>
+            <!--     Gender     -->
+            <div class="form-group row" style="margin-left: 10px;">
+                <label class="col-4 col-form-label">Gender: </label>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="Male" th:field="*{gender}">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="female" value="Female" th:field="*{gender}">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+            </div>
+
+            <!--     Address     -->
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Address: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{address}" class="form-control" required />
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn">Sign Up</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
